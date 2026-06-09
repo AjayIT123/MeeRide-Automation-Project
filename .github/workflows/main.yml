@@ -1,0 +1,38 @@
+name: Selenium Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+
+      - name: Build with Maven
+        run: mvn clean install
+
+      - name: Run Selenium Tests
+        run: mvn test
+
+      - name: Verify Java Version
+        run: java -version
+
+      - name: Build Project
+        run: mvn clean install
+
+      - name: Run Playwright Tests
+        run: mvn test
+
