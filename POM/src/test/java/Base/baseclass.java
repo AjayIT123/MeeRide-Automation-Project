@@ -12,6 +12,7 @@ public class baseclass {
 	public WebDriver driver;
 	@BeforeClass
 	public void setup() {
+		//this webdriver setup
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
