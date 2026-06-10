@@ -21,6 +21,9 @@ jobs:
         with:
           java-version: '21'
 
+      - name: Set up ChromeDriver
+        uses: browser-actions/setup-chrome@v1
+
       - name: Verify Java Version
         run: java -version
 
