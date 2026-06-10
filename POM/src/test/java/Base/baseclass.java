@@ -14,6 +14,7 @@ public class baseclass {
 	public void setup() {
 		//this webdriver setup
 		//launch chrome driver.
+		//waits used
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
